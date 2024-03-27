@@ -16,3 +16,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "hello" > output.log
+      - name: upload something
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-log-file
+          path: output.log
